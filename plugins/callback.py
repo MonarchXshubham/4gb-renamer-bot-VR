@@ -21,7 +21,7 @@ async def about(bot,update):
 async def donatecm(bot,message):
     text = script.DONATE_TXT
     keybord = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🦋 Admin",url = "https://t.me/CallAdminRobot"),
+        [InlineKeyboardButton("🦋 Admin",url = "https://t.me/VR_Necromancer"),
         InlineKeyboardButton("✖️ Close",callback_data = "cancel") ]])
     await message.reply_text(text = text,reply_markup = keybord)    
 
@@ -39,11 +39,17 @@ async def admincm(bot,message):
 @Client.on_callback_query(filters.regex('help'))
 async def help(bot,update):
     text = script.HELP_TXT.format(update.from_user.mention)
-    keybord = InlineKeyboardMarkup([ 
-                    [InlineKeyboardButton('🏞 Thumbnail', callback_data='thumbnail'),
-                    InlineKeyboardButton('✏ Caption', callback_data='caption')],
-                    [InlineKeyboardButton('🏠 Home', callback_data='home'),
-                    InlineKeyboardButton('💵 Donate', callback_data='donate')]
+    keybord = InlineKeyboardMarkup([
+        	    InlineKeyboardButton('🏡', callback_data='home'),
+        	    InlineKeyboardButton('⚙️', callback_data='help'),
+        	    InlineKeyboardButton('🖥', callback_data='thumbnail'),
+        	    InlineKeyboardButton('✏️', callback_data='caption'),
+        	    InlineKeyboardButton('✨', callback_data='donate')
+        	    ],[ 
+                    [InlineKeyboardButton('• ᴛʜᴜᴍʙɴᴀɪʟ •', callback_data='thumbnail'),
+                    InlineKeyboardButton('• ᴄᴀᴘᴛɪᴏɴ •', callback_data='caption')],
+                    [InlineKeyboardButton('• ʜᴏᴍᴇ •', callback_data='home'),
+                    InlineKeyboardButton('• ᴅᴏɴᴀᴛᴇ •', callback_data='donate')]
                    ])
     await update.message.edit(text = text,reply_markup = keybord)
 
@@ -82,7 +88,6 @@ async def home_callback_handler(bot, query):
         	    InlineKeyboardButton('⚙️', callback_data='help'),
         	    InlineKeyboardButton('🖥', callback_data='thumbnail'),
         	    InlineKeyboardButton('✏️', callback_data='caption'),
-	            InlineKeyboardButton('⚡️', callback_data='plan'),
         	    InlineKeyboardButton('✨', callback_data='donate')
         	    ],[
 	            InlineKeyboardButton('❗️ʜᴇʟᴘ', callback_data='help')
