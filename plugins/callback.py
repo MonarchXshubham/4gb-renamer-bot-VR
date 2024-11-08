@@ -88,6 +88,7 @@ async def home_callback_handler(bot, query):
         	    InlineKeyboardButton('⚙️', callback_data='help'),
         	    InlineKeyboardButton('🖥', callback_data='thumbnail'),
         	    InlineKeyboardButton('✏️', callback_data='caption'),
+	            InlineKeyboardButton('⚡️', callback_data='myplan'),
         	    InlineKeyboardButton('✨', callback_data='donate')
         	    ],[
 	            InlineKeyboardButton('❗️ʜᴇʟᴘ', callback_data='help')
